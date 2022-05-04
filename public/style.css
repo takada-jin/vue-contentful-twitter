@@ -65,6 +65,7 @@ p{
     width: 135px;
     font-size: 15px;
     border: 0px;
+    cursor: pointer;
 }
 
 .hr {
