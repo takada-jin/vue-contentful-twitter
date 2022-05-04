@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <main id="app" class="main" >
+        <h1 class="home">ホーム {{ hoge }} </h1>
+        <div class="tweet-form-container">
+            <div>
+                <img class="icon" src="https://pbs.twimg.com/profile_images/1521691414903803904/JxIhR3J7_400x400.png" alt="" />
+            </div>
+            <div class="tweet-form">
+                <textarea name="" id="" placeholder="いまどうしてる？" v-model="form.tweetText" :maxlength="maxTweetCharacter" ></textarea>
+                <hr class="hr" />
+                <div class="button-wrapper">
+                    <p>残り{{ remainingTweetCharacter }}文字</p>
+                    <button @click="tweet">ツイートする</button>
+                </div>
+            </div>
+        </div>
+        <hr class="hr" />
+        <div v-for="tweet in reversedTweets">
+            <div class="tweet">
+                <div>
+                    <img class="icon" src="https://pbs.twimg.com/profile_images/1521691414903803904/JxIhR3J7_400x400.png" alt="" />
+                </div>
+                <div>
+                    <div class="tweet-author">
+                        <span class="tweet-author-name">{{ tweet.authorName }}</span>
+                        <span class="tweet-author-id">{{ tweet.authorId }}</span>
+                        <span class="tweeted-at">{{ tweet.tweetedAt }}</span>
+                    </div>
+                    <div>
+                        <p>{{ tweet.tweetText }}</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr" />
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
