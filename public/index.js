@@ -10,23 +10,26 @@ const app = {
     },
     computed: {
       remainingTweetCharacter(){
-          return this.maxTweetCharacter - this.form.tweetText.length;
+        return this.maxTweetCharacter - this.form.tweetText.length;
       },
       reversedTweets() {
         return this.tweets.slice().reverse();
       },
     },
     methods: {
-      tweet(){
-          if (this.form.tweetText.length == 0) return;
+      tweet(e){
+        //shift+enterで改行しないようにイベントキャンセル
+        e.preventDefault();
 
-          this.tweets.push({
-            authorName: "高田 仁",
-            authorId: "@takada.jin",
-            tweetedAt: this.now(),
-            tweetText: this.form.tweetText,
-          });
-          this.form.tweetText = "";
+        if (this.form.tweetText.length == 0) return;
+
+        this.tweets.push({
+          authorName: "高田 仁",
+          authorId: "@takada.jin",
+          tweetedAt: this.now(),
+          tweetText: this.form.tweetText,
+        });
+        this.form.tweetText = "";
       },
       now() {
         const now = new Date();
