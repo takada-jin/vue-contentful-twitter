@@ -20,7 +20,12 @@
                 <hr class="hr" />
                 <div class="button-wrapper">
                     <p>残り{{ remainingTweetCharacter }}文字</p>
-                    <button @click="tweet">ツイートする</button>
+                    <button
+                        :class="[{ active: form.tweetText != 0 }, { 'non-active': form.tweetText == 0 }]"
+                        @click="tweet"
+                    >
+                        ツイートする
+                    </button>
                 </div>
             </div>
         </div>
