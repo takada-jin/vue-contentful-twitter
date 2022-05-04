@@ -26,6 +26,7 @@ const app = {
             tweetedAt: this.now(),
             tweetText: this.form.tweetText,
           });
+          this.form.tweetText = "";
       },
       now() {
         const now = new Date();
