@@ -18,6 +18,8 @@ const app = {
     },
     methods: {
       tweet(){
+          if (this.form.tweetText.length == 0) return;
+
           this.tweets.push({
             authorName: "高田 仁",
             authorId: "@takada.jin",
