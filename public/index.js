@@ -22,6 +22,9 @@ const app = {
         e.preventDefault();
 
         if (this.form.tweetText.length == 0) return;
+        //空白だけではツイートできないようにする
+        const text = document.getElementById('text');
+        if(!text.value.match(/\S/g)||!text.value.match(/\S/g)) return;
 
         this.tweets.push({
           authorName: "高田 仁",

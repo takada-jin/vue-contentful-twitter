@@ -18,6 +18,7 @@
             <div class="tweet-form">
                 <textarea 
                     placeholder="いまどうしてる？"
+                    id="text"
                     v-model="form.tweetText"
                     :maxlength="maxTweetCharacter"
                     @keydown.shift.enter="tweet"
