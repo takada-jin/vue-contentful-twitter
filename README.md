@@ -1,1 +1,1 @@
-# vue-contentful-twitter
+# vue-twitter
